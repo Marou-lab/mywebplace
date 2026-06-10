@@ -84,7 +84,20 @@
       </button>
       <nav class="nav-links">
         <a href="index.html">Accueil</a>
-        <a href="services.html" class="active">Services</a>
+        <div class="nav-item has-dropdown">
+          <a href="services.html" class="nav-dropdown-toggle active">Services
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown" role="menu">
+            <a href="services.html" class="dropdown-all">Tous les services</a>
+            <a href="audit-marketplace.html">Audit Marketplace</a>
+            <a href="optimisation-fiches-produits.html">Optimisation de fiches produits</a>
+            <a href="integration-marketplace.html">Intégration Marketplace</a>
+            <a href="accompagnement-vendeur-marketplace.html">Accompagnement vendeur Marketplace</a>
+            <a href="conseil-ecommerce.html">Conseil E-commerce</a>
+            <a href="creation-site-web.html">Création de sites web</a>
+          </div>
+        </div>
         <a href="realisations.html">Réalisations</a>
         <a href="a-propos.html">À propos</a>
         <a href="blog.html">Blog</a>
@@ -121,23 +134,46 @@
     <!-- ===== Vue d'ensemble ===== -->
     <section class="section section--alt">
       <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Nos services détaillés</span>
+          <h2>Six expertises pour vendre en ligne</h2>
+          <p>Chaque service dispose de sa page dédiée : découvrez le détail de mon accompagnement.</p>
+        </div>
         <div class="cards">
-          <a href="#marketplace" class="card reveal">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1-4.5A1.5 1.5 0 0 0 17.5 3h-11A1.5 1.5 0 0 0 5 4.5L4 9z"/><path d="M5 9v9a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 18V9"/><path d="M9.5 19.5V14h5v5.5"/></svg></div>
-            <h3>Marketplace</h3>
-            <p>Vendez sur les plus grandes places de marché et touchez des millions d'acheteurs.</p>
+          <a href="audit-marketplace.html" class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <h3>Audit Marketplace</h3>
+            <p>Un état des lieux complet de votre présence et de vos performances sur les marketplaces.</p>
             <span class="card-link">Découvrir →</span>
           </a>
-          <a href="#ecommerce" class="card reveal">
+          <a href="optimisation-fiches-produits.html" class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg></div>
+            <h3>Optimisation de fiches produits</h3>
+            <p>Des fiches produits structurées et optimisées pour gagner en visibilité et en conversion.</p>
+            <span class="card-link">Découvrir →</span>
+          </a>
+          <a href="integration-marketplace.html" class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M15 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg></div>
+            <h3>Intégration Marketplace</h3>
+            <p>Connexion et intégration vendeur sur Amazon, ManoMano, Cdiscount ou Leroy Merlin.</p>
+            <span class="card-link">Découvrir →</span>
+          </a>
+          <a href="accompagnement-vendeur-marketplace.html" class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Accompagnement vendeur Marketplace</h3>
+            <p>Un suivi continu pour développer durablement vos ventes en multicanal.</p>
+            <span class="card-link">Découvrir →</span>
+          </a>
+          <a href="conseil-ecommerce.html" class="card reveal">
             <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3 4 7v11.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V7l-2.5-4z"/><path d="M4 7h16"/><path d="M15.5 11a3.5 3.5 0 0 1-7 0"/></svg></div>
-            <h3>E-commerce</h3>
-            <p>Optimisez votre boutique et transformez vos visiteurs en clients fidèles.</p>
+            <h3>Conseil E-commerce</h3>
+            <p>Création et optimisation de boutiques Shopify, WooCommerce, PrestaShop et Magento.</p>
             <span class="card-link">Découvrir →</span>
           </a>
-          <a href="#creation" class="card reveal">
+          <a href="creation-site-web.html" class="card reveal">
             <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="8.5 8 4.5 12 8.5 16"/><polyline points="15.5 8 19.5 12 15.5 16"/><line x1="13" y1="6" x2="11" y2="18"/></svg></div>
             <h3>Création de sites web</h3>
-            <p>Un site moderne, rapide et optimisé pour convertir et inspirer confiance.</p>
+            <p>Des sites vitrines et e-commerce modernes, responsives et suivis dans la durée.</p>
             <span class="card-link">Découvrir →</span>
           </a>
         </div>
@@ -278,9 +314,12 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html#marketplace">Marketplace</a></li>
-            <li><a href="services.html#ecommerce">E-commerce</a></li>
-            <li><a href="services.html#creation">Création de sites web</a></li>
+            <li><a href="audit-marketplace.html">Audit Marketplace</a></li>
+            <li><a href="optimisation-fiches-produits.html">Optimisation de fiches produits</a></li>
+            <li><a href="integration-marketplace.html">Intégration Marketplace</a></li>
+            <li><a href="accompagnement-vendeur-marketplace.html">Accompagnement vendeur</a></li>
+            <li><a href="conseil-ecommerce.html">Conseil E-commerce</a></li>
+            <li><a href="creation-site-web.html">Création de sites web</a></li>
           </ul>
         </div>
         <div class="footer-col">

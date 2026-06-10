@@ -88,8 +88,8 @@ p { color: var(--text); }
   padding: 0 28px;
 }
 
-.section { padding: 120px 0; }
-.section--tight { padding: 80px 0; }
+.section { padding: 100px 0; }
+.section--tight { padding: 64px 0; }
 .section--alt { background: var(--bg); }
 
 .section--dark {
@@ -107,7 +107,7 @@ p { color: var(--text); }
 
 .section-head {
   max-width: 720px;
-  margin: 0 auto 72px;
+  margin: 0 auto 56px;
   text-align: center;
 }
 .section-head p {
@@ -1351,4 +1351,192 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .hero-stats { gap: 28px; }
   .hero-float { display: none; }
   .trust-logos { gap: 32px; }
+}
+
+/* ==========================================================================
+   ÉVOLUTION PREMIUM — menu déroulant, sections sombres, blocs d'expertise
+   ========================================================================== */
+
+/* --- Menu déroulant Services --------------------------------------------- */
+.nav-item.has-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+.nav-dropdown-toggle .chev { width: 14px; height: 14px; transition: transform var(--transition); }
+.nav-item.has-dropdown:hover .nav-dropdown-toggle .chev { transform: rotate(180deg); }
+
+/* pont invisible pour ne pas perdre le survol */
+.nav-item.has-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  height: 16px;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 290px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 10px;
+  display: grid;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+  z-index: 1001;
+}
+.nav-item.has-dropdown:hover .dropdown,
+.nav-item.has-dropdown:focus-within .dropdown {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.dropdown a {
+  display: block;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.dropdown a:hover { background: var(--bg); color: var(--blue-ink); }
+.dropdown .dropdown-all {
+  font-weight: 700;
+  color: var(--blue-ink);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 6px;
+  padding-bottom: 13px;
+}
+
+/* --- Section « deep » (sombre premium) ----------------------------------- */
+.section--deep {
+  background:
+    radial-gradient(70% 120% at 85% 0%, rgba(140, 198, 255, 0.14), transparent 55%),
+    linear-gradient(180deg, #061521, #0a2436);
+  color: rgba(255, 255, 255, 0.78);
+}
+.section--deep h1, .section--deep h2, .section--deep h3, .section--deep h4 { color: var(--white); }
+.section--deep p { color: rgba(255, 255, 255, 0.74); }
+.section--deep .eyebrow { color: var(--blue); }
+.section--deep .lead { color: rgba(255, 255, 255, 0.82); }
+
+/* --- Mockups / fenêtres d'illustration ----------------------------------- */
+.mockup {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.section--dark .mockup, .section--deep .mockup {
+  background: #0c2638;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-lg);
+}
+.mockup-head {
+  display: flex; align-items: center; gap: 7px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.section--dark .mockup-head, .section--deep .mockup-head { border-color: rgba(255, 255, 255, 0.08); }
+.mockup-head i { width: 11px; height: 11px; border-radius: 50%; background: var(--border); }
+.mockup-head i:nth-child(1) { background: #ff5f57; }
+.mockup-head i:nth-child(2) { background: #febc2e; }
+.mockup-head i:nth-child(3) { background: #28c840; }
+.mockup-head span { margin-left: 8px; font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+.section--dark .mockup-head span, .section--deep .mockup-head span { color: rgba(255, 255, 255, 0.55); }
+.mockup-body { padding: 22px; }
+
+/* Lignes type « audit » avec barre illustrative */
+.audit-row { display: grid; gap: 8px; margin-bottom: 16px; }
+.audit-row:last-child { margin-bottom: 0; }
+.audit-row .audit-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+.section--dark .audit-row .audit-top, .section--deep .audit-row .audit-top { color: #fff; }
+.audit-row .audit-tag { font-size: 0.78rem; font-weight: 700; color: var(--blue-ink); }
+.bar-track { height: 8px; border-radius: 50px; background: var(--bg); overflow: hidden; }
+.section--dark .bar-track, .section--deep .bar-track { background: rgba(255, 255, 255, 0.08); }
+.bar-fill { height: 100%; border-radius: 50px; background: linear-gradient(90deg, var(--blue), var(--blue-ink)); }
+
+/* Liste à puces « check » dans un mockup */
+.mini-list { display: grid; gap: 11px; }
+.mini-list li { position: relative; padding-left: 26px; font-size: 0.94rem; color: var(--muted); }
+.section--dark .mini-list li, .section--deep .mini-list li { color: rgba(255, 255, 255, 0.78); }
+.mini-list li::before {
+  content: ""; position: absolute; left: 0; top: 2px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--blue-soft);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%232f86d6' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center;
+}
+
+.illus-caption { text-align: center; font-size: 0.84rem; color: var(--muted); margin-top: 14px; font-style: italic; }
+.section--dark .illus-caption, .section--deep .illus-caption { color: rgba(255, 255, 255, 0.5); }
+
+/* --- Schéma de flux (catalogue → connecteur → marketplaces) --------------- */
+.flow {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 14px;
+}
+.flow-node {
+  padding: 16px 20px; border-radius: 14px;
+  background: var(--white); border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  text-align: center; font-weight: 600; font-size: 0.92rem; color: var(--navy);
+  min-width: 130px;
+}
+.flow-node small { display: block; font-weight: 500; font-size: 0.78rem; color: var(--muted); margin-top: 3px; }
+.flow-node.is-accent { background: var(--navy); color: #fff; border-color: var(--navy); }
+.flow-node.is-accent small { color: rgba(255, 255, 255, 0.7); }
+.flow-arrow { color: var(--blue-ink); display: grid; place-items: center; }
+.flow-arrow svg { width: 26px; height: 26px; }
+@media (max-width: 640px) {
+  .flow { flex-direction: column; }
+  .flow-arrow svg { transform: rotate(90deg); }
+}
+
+/* --- Maillage interne : autres services ---------------------------------- */
+.svc-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.svc-links a {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 18px 20px; border-radius: 13px;
+  border: 1px solid var(--border); background: var(--white);
+  font-weight: 600; color: var(--navy);
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), color var(--transition);
+}
+.svc-links a:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: #d4e6f7; color: var(--blue-ink); }
+.svc-links a span.arr { color: var(--blue-ink); transition: transform var(--transition); }
+.svc-links a:hover span.arr { transform: translateX(4px); }
+
+/* --- Bandeau de mots-clés / pills ---------------------------------------- */
+.pill-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.pill {
+  padding: 8px 16px; border-radius: 50px;
+  background: var(--blue-soft); color: var(--blue-ink);
+  font-size: 0.86rem; font-weight: 600;
+}
+.section--dark .pill, .section--deep .pill { background: rgba(140, 198, 255, 0.12); color: var(--blue); }
+
+/* --- Menu déroulant : version mobile ------------------------------------- */
+@media (max-width: 768px) {
+  .nav-item.has-dropdown { flex-direction: column; align-items: stretch; }
+  .nav-item.has-dropdown::after { display: none; }
+  .nav-dropdown-toggle { justify-content: space-between; padding: 14px; border-radius: 10px; }
+  .dropdown {
+    position: static; transform: none;
+    opacity: 1; visibility: visible;
+    min-width: 0; box-shadow: none; border: none;
+    border-left: 2px solid var(--border); border-radius: 0;
+    margin: 2px 0 6px 14px; padding: 0 0 0 8px;
+    max-height: 0; overflow: hidden;
+    transition: max-height var(--transition);
+  }
+  .nav-item.has-dropdown.open .dropdown { max-height: 520px; }
+  .nav-item.has-dropdown.open .nav-dropdown-toggle .chev { transform: rotate(180deg); }
+  .dropdown a { white-space: normal; }
+  .dropdown .dropdown-all { border-radius: 0; }
 }

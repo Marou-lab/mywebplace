@@ -22,14 +22,26 @@ document.addEventListener("DOMContentLoaded", function () {
       toggle.setAttribute("aria-expanded", expanded);
     });
 
-    // Fermer le menu après un clic sur un lien (mobile)
-    navLinks.querySelectorAll("a").forEach(function (link) {
+    // Fermer le menu après un clic sur un vrai lien de navigation (mobile),
+    // mais pas sur le bouton "Services" qui sert à déplier le sous-menu.
+    navLinks.querySelectorAll("a:not(.nav-dropdown-toggle)").forEach(function (link) {
       link.addEventListener("click", function () {
         toggle.classList.remove("open");
         navLinks.classList.remove("open");
       });
     });
   }
+
+  /* ----- Menu déroulant Services (mobile : clic pour déplier) -------- */
+  document.querySelectorAll(".nav-dropdown-toggle").forEach(function (tgl) {
+    tgl.addEventListener("click", function (e) {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        e.preventDefault();
+        var parent = tgl.closest(".has-dropdown");
+        if (parent) parent.classList.toggle("open");
+      }
+    });
+  });
 
   /* ----- Header : ombre au scroll ------------------------------------ */
   const header = document.querySelector(".header");
