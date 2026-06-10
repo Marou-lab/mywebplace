@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Les pages légales portent une balise meta robots "noindex" :
+# on les laisse explorables pour que ce noindex soit bien lu par les moteurs.
+
+Sitemap: https://mywebplace.fr/sitemap.xml

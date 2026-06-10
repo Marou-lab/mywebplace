@@ -1,0 +1,7 @@
+# Normalisation des fins de ligne (évite les avertissements LF/CRLF)
+* text=auto
+
+# Fichiers binaires : ne pas modifier
+*.png binary
+*.jpg binary
+*.ico binary

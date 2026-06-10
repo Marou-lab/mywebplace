@@ -1,0 +1,16 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Logs / divers
+*.log
+node_modules/
+
+# Outillage local (non lié au site)
+.claude/
