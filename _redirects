@@ -1,0 +1,3 @@
+# Rediriger www vers le domaine principal (évite le contenu dupliqué).
+# mywebplace.fr reste le domaine canonique.
+https://www.mywebplace.fr/* https://mywebplace.fr/:splat 301!
