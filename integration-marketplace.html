@@ -43,15 +43,16 @@
         "serviceType": "Intégration vendeur et flux marketplace",
         "provider": { "@id": "https://mywebplace.fr/#business" },
         "areaServed": [ { "@type": "City", "name": "Bordeaux" }, { "@type": "Country", "name": "France" } ],
-        "description": "Intégration vendeur sur les marketplaces : ouverture et configuration de comptes, connexion du catalogue produit et gestion des flux via Mirakl, Lengow, Shoppingfeed sur Amazon, ManoMano, Cdiscount et Leroy Merlin.",
+        "description": "Intégration vendeur sur les marketplaces : connexion du catalogue produit, mapping des catégories et attributs, gestion des flux et synchronisation multicanale via Mirakl, Octopia, Lengow, Shoppingfeed, Base (ex-Baselinker) et Amazon Seller Central, sur Amazon, ManoMano, Cdiscount et Leroy Merlin.",
         "url": "https://mywebplace.fr/integration-marketplace.html"
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "Qu'est-ce que l'intégration vendeur sur une marketplace ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est l'ensemble des étapes pour démarrer la vente : ouverture et paramétrage du compte vendeur, connexion du catalogue produit, mise en place des flux de données et publication des offres sur la marketplace." } },
-          { "@type": "Question", "name": "Quels outils de flux utilisez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Selon votre contexte : Mirakl, Lengow, Shoppingfeed, Base (ex-Baselinker), Octopia ou Amazon Seller Central. Je vous oriente vers la solution la plus adaptée à votre catalogue et à votre organisation." } },
-          { "@type": "Question", "name": "Sur quelles marketplaces pouvez-vous m'intégrer ?", "acceptedAnswer": { "@type": "Answer", "text": "Amazon, ManoMano, Cdiscount et Leroy Merlin notamment, ainsi que d'autres marketplaces généralistes ou spécialisées selon vos produits, votre secteur et vos objectifs." } }
+          { "@type": "Question", "name": "Faut-il forcément un connecteur de flux ?", "acceptedAnswer": { "@type": "Answer", "text": "Pour un très petit catalogue ou un test, l'import manuel (fichier) peut suffire. Au-delà, un connecteur comme Mirakl, Lengow, Shoppingfeed ou Base évite les erreurs et la saisie répétitive, et permet de synchroniser stocks et prix automatiquement." } },
+          { "@type": "Question", "name": "Que se passe-t-il si mes produits sont rejetés ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est fréquent lors d'une première intégration : EAN manquant, attribut obligatoire absent, mauvaise catégorie. J'analyse les rapports de rejet, je corrige le mapping et les données, puis je revalide jusqu'à la mise en ligne propre. C'est un travail itératif, normal." } },
+          { "@type": "Question", "name": "Gérez-vous la synchronisation des stocks en multicanal ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, c'est le cœur du sujet. L'objectif est d'éviter les surventes et les ruptures lorsque vous vendez sur plusieurs marketplaces et sur votre boutique en même temps, en gardant un catalogue, des stocks et des prix cohérents partout." } },
+          { "@type": "Question", "name": "Comment choisissez-vous l'outil pour mon cas ?", "acceptedAnswer": { "@type": "Answer", "text": "Selon vos plateformes cibles (certaines imposent leur technologie, comme Mirakl), la taille et la complexité de votre catalogue, et votre organisation logistique. Je vous oriente vers la solution la plus adaptée, sans surdimensionner ni sous-dimensionner." } }
         ]
       }
     ]
@@ -103,14 +104,14 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">L'objectif</span>
-          <h2>Démarrer vite et bien</h2>
+          <h2>Connecter votre catalogue, proprement</h2>
         </div>
         <div class="prose reveal">
-          <p>Se lancer sur une <strong>marketplace</strong> ne s'improvise pas : ouverture de compte, paramétrage, connexion du <strong>catalogue produit</strong>, gestion des flux et publication des offres. Une <strong>intégration vendeur</strong> bien menée vous évite les erreurs de démarrage et vous fait gagner un temps précieux.</p>
-          <p>Je m'appuie sur les outils de référence — <strong>Mirakl</strong>, Lengow, Shoppingfeed, Base (ex-Baselinker), Octopia, Amazon Seller Central — pour connecter proprement votre catalogue et automatiser vos flux, dans une logique de <strong>développement multicanal</strong>.</p>
+          <p>L'intégration, c'est l'étape où tout se joue avant la première vente — et celle où je vois le plus de projets se bloquer. Ouvrir un compte ne suffit pas : il faut faire entrer votre <strong>catalogue produit</strong> dans la structure de chaque marketplace, le mapper correctement, le tester, puis le maintenir synchronisé. Mal fait, c'est des produits rejetés, invisibles ou en survente. Bien fait, c'est un socle fiable sur lequel vos ventes peuvent reposer.</p>
+          <p>Que vous soyez un vendeur qui démarre, une marque qui ajoute un canal ou un distributeur avec un gros catalogue, je gère cette mécanique de bout en bout — avec les outils que j'utilise au quotidien : <strong>Mirakl</strong>, <strong>Octopia</strong>, <strong>Lengow</strong>, <strong>Shoppingfeed</strong>, <strong>Base</strong> (ex-Baselinker) et <strong>Amazon Seller Central</strong>.</p>
         </div>
         <div class="pill-row reveal" style="margin-top:32px">
-          <span class="pill">Intégration vendeur</span><span class="pill">Amazon</span><span class="pill">ManoMano</span><span class="pill">Cdiscount</span><span class="pill">Leroy Merlin</span><span class="pill">Mirakl</span>
+          <span class="pill">Mirakl</span><span class="pill">Octopia</span><span class="pill">Lengow</span><span class="pill">Shoppingfeed</span><span class="pill">Base (ex-Baselinker)</span><span class="pill">Amazon Seller Central</span>
         </div>
       </div>
     </section>
@@ -118,28 +119,17 @@
     <section class="section section--alt">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Pour qui ?</span>
-          <h2>À qui s'adresse ce service ?</h2>
+          <span class="eyebrow">Le rôle des flux catalogue</span>
+          <h2>Produits, offres et synchronisation</h2>
+          <p>Un flux, c'est le pont automatisé entre votre catalogue et chaque place de marché.</p>
         </div>
-        <div class="values">
-          <div class="value reveal"><h3>Nouveaux vendeurs</h3><p>Vous voulez vous lancer sur les marketplaces sans perdre de temps ni commettre d'erreurs.</p></div>
-          <div class="value reveal"><h3>Vendeurs multicanal</h3><p>Vous souhaitez ajouter de nouvelles plateformes à votre stratégie de vente en ligne.</p></div>
-          <div class="value reveal"><h3>Marques &amp; distributeurs</h3><p>Vous avez un catalogue à connecter proprement via un connecteur de flux.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Le principe</span>
-          <h2>Du catalogue aux marketplaces</h2>
-          <p>Un flux maîtrisé entre votre catalogue produit et chaque place de marché.</p>
+        <div class="prose reveal" style="margin-bottom:44px">
+          <p>Sur une marketplace, on manipule deux notions distinctes : le <strong>produit</strong> (la fiche, ses attributs, ses visuels) et l'<strong>offre</strong> (votre prix, votre stock, votre délai sur ce produit). Le <strong>flux catalogue</strong> est ce qui transporte et tient à jour ces informations en continu. Sans flux, vous saisissez tout à la main et vous repassez derrière à chaque changement de prix ou de stock. Avec un flux bien réglé, votre <strong>catalogue produit</strong>, vos stocks et vos prix restent cohérents sur tous vos canaux — c'est le socle de la <strong>gestion multicanale</strong>.</p>
         </div>
         <div class="flow reveal">
-          <div class="flow-node">Votre catalogue<small>produits &amp; stocks</small></div>
+          <div class="flow-node">Votre catalogue<small>produits, stocks, prix</small></div>
           <div class="flow-arrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
-          <div class="flow-node is-accent">Connecteur de flux<small>Mirakl · Lengow · Shoppingfeed</small></div>
+          <div class="flow-node is-accent">Flux &amp; connecteur<small>Mirakl · Lengow · Shoppingfeed · Base</small></div>
           <div class="flow-arrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
           <div class="flow-node">Marketplaces<small>Amazon · ManoMano · Cdiscount · Leroy Merlin</small></div>
         </div>
@@ -147,17 +137,137 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Les outils que j'utilise</span>
+          <h2>Le bon connecteur pour le bon contexte</h2>
+          <p>Aucun outil n'est « le meilleur » dans l'absolu. Le bon choix dépend de vos plateformes cibles, de votre catalogue et de votre organisation.</p>
+        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <h3>Mirakl</h3>
+            <p>La technologie qui motorise de nombreuses marketplaces françaises (Leroy Merlin, l'écosystème Cdiscount/Octopia…). Côté vendeur, c'est le portail d'intégration et de gestion des offres.</p>
+            <p style="margin:0;color:var(--navy);font-size:0.92rem"><strong>Quand je l'utilise :</strong> dès que la marketplace cible fonctionne sous Mirakl.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Octopia</h3>
+            <p>La solution marketplace de Cdiscount : un point d'entrée pour vendre sur Cdiscount et son réseau, avec des services associés (dont la logistique).</p>
+            <p style="margin:0;color:var(--navy);font-size:0.92rem"><strong>Quand je l'utilise :</strong> pour cibler Cdiscount et son écosystème.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Lengow</h3>
+            <p>Une plateforme de gestion de flux : diffuser et optimiser un même catalogue vers de multiples canaux (marketplaces, comparateurs, Google Shopping).</p>
+            <p style="margin:0;color:var(--navy);font-size:0.92rem"><strong>Quand je l'utilise :</strong> pour piloter un catalogue diffusé sur beaucoup de canaux.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Shoppingfeed</h3>
+            <p>Un gestionnaire de flux orienté marketplaces : publication du catalogue, remontée des commandes et synchronisation multicanale.</p>
+            <p style="margin:0;color:var(--navy);font-size:0.92rem"><strong>Quand je l'utilise :</strong> pour connecter catalogue et commandes en multicanal.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Base (ex-Baselinker)</h3>
+            <p>Un outil de gestion e-commerce multicanal très opérationnel : catalogue, commandes, stocks et expéditions centralisés au même endroit.</p>
+            <p style="margin:0;color:var(--navy);font-size:0.92rem"><strong>Quand je l'utilise :</strong> côté gestion quotidienne et logistique des commandes.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Amazon Seller Central</h3>
+            <p>L'interface vendeur native d'Amazon (et son API) : offres, fiches, stocks, FBA et publicité. Incontournable pour tout ce qui est spécifique à Amazon.</p>
+            <p style="margin:0;color:var(--navy);font-size:0.92rem"><strong>Quand je l'utilise :</strong> pour toute intégration et gestion côté Amazon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container split">
+        <div class="split-text reveal">
+          <span class="eyebrow">Mapping catégories &amp; attributs</span>
+          <h2>L'étape qui fait passer (ou bloque) votre catalogue</h2>
+          <p class="lead">Le mapping consiste à faire correspondre votre catalogue à la structure imposée par la marketplace.</p>
+          <p>Concrètement, je relie vos <strong>catégories</strong> à leurs catégories, vos <strong>attributs</strong> à leurs attributs (souvent obligatoires et nommés différemment), et vos identifiants au bon champ — l'<strong>EAN/GTIN</strong> en tête, indispensable pour rattacher un produit existant. Un attribut obligatoire oublié, une catégorie mal choisie, et c'est le produit entier qui est refusé. C'est l'étape la plus technique, et celle qui demande le plus de rigueur.</p>
+        </div>
+        <div class="mockup reveal">
+          <div class="mockup-head"><i></i><i></i><i></i><span>Mapping — aperçu</span></div>
+          <div class="mockup-body">
+            <ul class="mini-list">
+              <li>Catégorie « Luminaires » ↦ « Maison › Éclairage › Suspensions »</li>
+              <li>Attribut « Couleur » ↦ « Coloris » (valeurs normalisées)</li>
+              <li>Attribut « Matière » ↦ obligatoire sur la marketplace</li>
+              <li>Référence interne ↦ EAN / GTIN (rattachement produit)</li>
+              <li>Délai &amp; stock ↦ champs de l'offre</li>
+            </ul>
+            <p class="illus-caption">Exemple illustratif d'un mapping catalogue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split split--reverse">
+        <div class="split-text reveal">
+          <span class="eyebrow">Avant la mise en production</span>
+          <h2>Je teste sur un échantillon, pas sur tout le catalogue</h2>
+          <p class="lead">On corrige beaucoup plus facilement 30 références que 3 000.</p>
+          <p>Avant de tout déployer, je valide l'intégration sur un sous-ensemble représentatif : contrôle des produits acceptés et rejetés, vérification du mapping, cohérence des prix et des stocks, puis montée en charge progressive. Cette étape de recette évite de propager une erreur sur l'ensemble du catalogue et de passer des heures à « nettoyer » derrière.</p>
+        </div>
+        <div class="mockup reveal">
+          <div class="mockup-head"><i></i><i></i><i></i><span>Recette — contrôle d'intégration</span></div>
+          <div class="mockup-body">
+            <div class="audit-row"><div class="audit-top"><span>Échantillon publié</span><span class="audit-tag">validé</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+            <div class="audit-row"><div class="audit-top"><span>Attributs obligatoires</span><span class="audit-tag">à compléter</span></div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div></div>
+            <div class="audit-row"><div class="audit-top"><span>Rattachement EAN</span><span class="audit-tag">ok</span></div><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+            <p class="illus-caption">Exemple illustratif d'un contrôle de recette.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Erreurs fréquentes</span>
+          <h2>Ce que je rencontre (et corrige) le plus souvent</h2>
+        </div>
+        <div class="prose reveal">
+          <ul class="card-list">
+            <li><strong>EAN/GTIN absents ou erronés</strong> : les produits ne se rattachent pas et restent invisibles.</li>
+            <li><strong>Attributs obligatoires manquants</strong> : la marketplace refuse la fiche, parfois sans message clair.</li>
+            <li><strong>Mapping bâclé</strong> : produits mal classés, donc introuvables par l'acheteur.</li>
+            <li><strong>Aucune synchronisation des stocks</strong> : surventes, annulations et litiges côté client.</li>
+            <li><strong>Doublons de fiches</strong> qui se cannibalisent au lieu de cumuler la visibilité.</li>
+            <li><strong>Un outil mal choisi</strong> : trop complexe pour un petit catalogue, ou trop limité pour un gros.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Méthode</span>
+          <h2>Comment je mène une intégration</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Cadrage &amp; outil</h3><p>On choisit les plateformes cibles et le connecteur adapté (Mirakl, Lengow, Shoppingfeed, Base, Seller Central).</p></div>
+          <div class="step reveal"><h3>Préparation des données</h3><p>Je fiabilise EAN, attributs et catégories avant toute connexion.</p></div>
+          <div class="step reveal"><h3>Mapping</h3><p>Je fais correspondre votre catalogue à la structure de la marketplace.</p></div>
+          <div class="step reveal"><h3>Recette sur échantillon</h3><p>Test sur un sous-ensemble, correction des rejets, validation prix/stock.</p></div>
+          <div class="step reveal"><h3>Mise en production</h3><p>Déploiement progressif du catalogue et contrôle de conformité.</p></div>
+          <div class="step reveal"><h3>Synchronisation &amp; suivi</h3><p>Stocks et prix tenus à jour en continu, en multicanal.</p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--deep">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Méthode d'accompagnement</span>
-          <h2>Les étapes de l'intégration</h2>
+          <span class="eyebrow">Mon expérience terrain</span>
+          <h2>Je connais les blocages des deux côtés</h2>
         </div>
-        <div class="steps">
-          <div class="step reveal"><h3>Cadrage</h3><p>Choix des plateformes et de l'outil de flux adaptés à votre catalogue.</p></div>
-          <div class="step reveal"><h3>Configuration</h3><p>Ouverture et paramétrage des comptes vendeurs.</p></div>
-          <div class="step reveal"><h3>Connexion</h3><p>Mise en place des flux et mapping de votre catalogue produit.</p></div>
-          <div class="step reveal"><h3>Mise en ligne</h3><p>Publication des offres et contrôle de la conformité.</p></div>
+        <div class="prose reveal">
+          <p>Pendant 4 ans comme Business Developer &amp; Account Manager Marketplace, j'ai accompagné plus de 50 vendeurs, recruté et lancé plusieurs dizaines d'entre eux, et géré des boutiques sur les principales plateformes françaises. J'ai intégré, débogué et fait tourner des catalogues au quotidien — pas en théorie, mais sur des produits réels, avec de vrais rejets à corriger et de vrais stocks à synchroniser.</p>
+          <p>Cette double exposition — côté opérateur de marketplace comme côté vendeur — change tout : je sais où ça coince, pourquoi une fiche est refusée, comment lire un rapport de rejet et quel outil sort vraiment du lot selon le contexte. C'est ce qui me permet d'aller vite, sans inventer de promesses, et de vous éviter les pièges que j'ai déjà rencontrés.</p>
         </div>
       </div>
     </section>
@@ -166,12 +276,13 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Bénéfices</span>
-          <h2>Ce que vous y gagnez</h2>
+          <h2>Concrètement, ce que ça change pour vous</h2>
         </div>
         <div class="values">
-          <div class="value reveal"><h3>Un démarrage propre</h3><p>Une configuration fiable, conforme aux exigences de chaque plateforme.</p></div>
-          <div class="value reveal"><h3>Du temps gagné</h3><p>Des flux automatisés plutôt que des saisies manuelles fastidieuses.</p></div>
-          <div class="value reveal"><h3>Une base scalable</h3><p>Un socle prêt pour ajouter de nouvelles marketplaces ensuite.</p></div>
+          <div class="value reveal"><h3>Des stocks &amp; prix synchronisés</h3><p>Fini les surventes et les écarts de prix entre vos marketplaces et votre boutique.</p></div>
+          <div class="value reveal"><h3>Un catalogue accepté</h3><p>Moins de produits rejetés ou en attente, grâce à un mapping et des données propres.</p></div>
+          <div class="value reveal"><h3>Une mise en ligne plus rapide</h3><p>Une recette maîtrisée évite les allers-retours et les corrections en masse.</p></div>
+          <div class="value reveal"><h3>Un socle multicanal piloté</h3><p>Ajouter une nouvelle marketplace devient une formalité, pas un nouveau chantier.</p></div>
         </div>
       </div>
     </section>
@@ -183,9 +294,10 @@
           <h2>Vos questions sur l'intégration</h2>
         </div>
         <div class="faq">
-          <div class="faq-item reveal"><button class="faq-question">Qu'est-ce que l'intégration vendeur sur une marketplace ? <span class="chev">+</span></button><div class="faq-answer"><p>C'est l'ensemble des étapes pour démarrer la vente : ouverture et paramétrage du compte vendeur, connexion du catalogue produit, mise en place des flux de données et publication des offres sur la marketplace.</p></div></div>
-          <div class="faq-item reveal"><button class="faq-question">Quels outils de flux utilisez-vous ? <span class="chev">+</span></button><div class="faq-answer"><p>Selon votre contexte : Mirakl, Lengow, Shoppingfeed, Base (ex-Baselinker), Octopia ou Amazon Seller Central. Je vous oriente vers la solution la plus adaptée à votre catalogue et à votre organisation.</p></div></div>
-          <div class="faq-item reveal"><button class="faq-question">Sur quelles marketplaces pouvez-vous m'intégrer ? <span class="chev">+</span></button><div class="faq-answer"><p>Amazon, ManoMano, Cdiscount et Leroy Merlin notamment, ainsi que d'autres marketplaces généralistes ou spécialisées selon vos produits, votre secteur et vos objectifs.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-question">Faut-il forcément un connecteur de flux ? <span class="chev">+</span></button><div class="faq-answer"><p>Pour un très petit catalogue ou un test, l'import manuel (fichier) peut suffire. Au-delà, un connecteur comme Mirakl, Lengow, Shoppingfeed ou Base évite les erreurs et la saisie répétitive, et permet de synchroniser stocks et prix automatiquement.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-question">Que se passe-t-il si mes produits sont rejetés ? <span class="chev">+</span></button><div class="faq-answer"><p>C'est fréquent lors d'une première intégration : EAN manquant, attribut obligatoire absent, mauvaise catégorie. J'analyse les rapports de rejet, je corrige le mapping et les données, puis je revalide jusqu'à la mise en ligne propre. C'est un travail itératif, normal.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-question">Gérez-vous la synchronisation des stocks en multicanal ? <span class="chev">+</span></button><div class="faq-answer"><p>Oui, c'est le cœur du sujet. L'objectif est d'éviter les surventes et les ruptures lorsque vous vendez sur plusieurs marketplaces et sur votre boutique en même temps, en gardant un catalogue, des stocks et des prix cohérents partout.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-question">Comment choisissez-vous l'outil pour mon cas ? <span class="chev">+</span></button><div class="faq-answer"><p>Selon vos plateformes cibles (certaines imposent leur technologie, comme Mirakl), la taille et la complexité de votre catalogue, et votre organisation logistique. Je vous oriente vers la solution la plus adaptée, sans surdimensionner ni sous-dimensionner.</p></div></div>
         </div>
       </div>
     </section>
