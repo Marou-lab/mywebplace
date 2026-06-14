@@ -1331,8 +1331,8 @@ textarea.form-control { resize: vertical; min-height: 140px; }
     overflow-y: auto;
   }
   .nav-links.open { transform: translateY(0); }
-  .nav-links a { padding: 14px; border-radius: 10px; }
-  .nav-links .btn { margin: 10px 0 0; width: 100%; }
+  .nav-links a { padding: 12px 14px; border-radius: 10px; font-size: 1rem; }
+  .nav-links .btn { margin: 12px 0 0; width: 100%; }
   .nav-links .btn.active { color: var(--white); }
 
   .section { padding: 80px 0; }
@@ -1525,18 +1525,52 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 @media (max-width: 768px) {
   .nav-item.has-dropdown { flex-direction: column; align-items: stretch; }
   .nav-item.has-dropdown::after { display: none; }
-  .nav-dropdown-toggle { justify-content: space-between; padding: 14px; border-radius: 10px; }
-  .dropdown {
-    position: static; transform: none;
-    opacity: 1; visibility: visible;
-    min-width: 0; box-shadow: none; border: none;
-    border-left: 2px solid var(--border); border-radius: 0;
-    margin: 2px 0 6px 14px; padding: 0 0 0 8px;
-    max-height: 0; overflow: hidden;
+  .nav-dropdown-toggle {
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  /* On neutralise le positionnement absolu ET le transform hérités du
+     desktop (y compris via :hover / :focus-within) qui décalaient le
+     sous-menu hors écran. En mobile, le sous-menu est un accordéon en flux. */
+  .dropdown,
+  .nav-item.has-dropdown:hover .dropdown,
+  .nav-item.has-dropdown:focus-within .dropdown {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    min-width: 0;
+    width: auto;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--blue);
+    border-radius: 0;
+    background: var(--bg);
+    margin: 4px 0 8px 12px;
+    padding: 4px 0 4px 8px;
+    opacity: 1;
+    visibility: visible;
+    max-height: 0;
+    overflow: hidden;
     transition: max-height var(--transition);
   }
-  .nav-item.has-dropdown.open .dropdown { max-height: 520px; }
+  .nav-item.has-dropdown.open .dropdown { max-height: 900px; }
   .nav-item.has-dropdown.open .nav-dropdown-toggle .chev { transform: rotate(180deg); }
-  .dropdown a { white-space: normal; }
-  .dropdown .dropdown-all { border-radius: 0; }
+
+  .dropdown a {
+    white-space: normal;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    border-radius: 8px;
+  }
+  .dropdown .dropdown-all {
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+  }
 }
