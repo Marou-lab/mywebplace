@@ -603,6 +603,8 @@ p { color: var(--text); }
   align-items: center;
 }
 .split--reverse .split-text { order: 2; }
+/* Aligne le haut des colonnes (ex. deux mockups Avant/Après) au lieu de les centrer */
+.split.align-top { align-items: start; }
 
 .feature-list { margin-top: 32px; display: grid; gap: 26px; }
 .feature-list .feature { display: flex; gap: 18px; align-items: flex-start; }
@@ -1351,6 +1353,8 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .hero-stats { gap: 28px; }
   .hero-float { display: none; }
   .trust-logos { gap: 32px; }
+  /* Une seule carte par ligne sous 480px : évite tout rognage à droite */
+  .cards, .post-grid { grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================
@@ -1493,7 +1497,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 .flow-node.is-accent small { color: rgba(255, 255, 255, 0.7); }
 .flow-arrow { color: var(--blue-ink); display: grid; place-items: center; }
 .flow-arrow svg { width: 26px; height: 26px; }
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .flow { flex-direction: column; }
   .flow-arrow svg { transform: rotate(90deg); }
 }
